@@ -17,28 +17,45 @@
     </header>
 
     <section>
-        <!--form element-->
-            <div class="card text-center" style="width: 16rem;">
-            <img src="./assets/images/weather.jpg" class="card-img-top" alt="sun is shining bright over snow-capped mountains">
-            <form class="card-body">
-              <h5 class="card-title">Search for a city</h5>
-              <input class="card-text" type="search" id="query" name="q" placeholder="Search...">
-              <a href="#" class="btn btn-primary col-10">Search</a>
-            </form>
+        <div class="row">
+            <!--search form-->
+            <div class="col-md-3 col-sm-12">
+                <div class="card text-center">
+                    <img src="./assets/images/weather.jpg" class="card-img-top" alt="sun is shining bright over snow-capped mountains">
+                    <form class="card-body form-label">
+                    <h5 class="card-title">Search for a city</h5>
+                    <input class="card-text" type="search" id="query" name="q" placeholder="Search...">
+                    <a href="#" class="btn btn-primary col-7">Search</a>
+                    </form>
+                </div>
+            </div>    
+        
+            <!--City weather-->
+            <div class="col-9 city-info">
             </div>
         </div>    
-
-        <!--city buttons-->
-        <div class="d-grid gap-2 col-2">
-            <button class="btn btn-secondary">New York</button>
-            <button class="btn btn-secondary">London</button>
-            <button class="btn btn-secondary">San Francisco</button>
-            <button class="btn btn-secondary">Los Angeles</button>
-            <button class="btn btn-secondary">Paris</button>
-            <button class="btn btn-secondary">Milan</button>
-            <button class="btn btn-secondary">Beijing</button>
-        </div>
+    </section>
+    
     <section>
+        <div class="row">
+            <div class="col-3">
+                <!--city buttons-->
+                <div class="d-grid gap-2">
+                    <button class="btn btn-secondary">New York</button>
+                    <button class="btn btn-secondary">London</button>
+                    <button class="btn btn-secondary">San Francisco</button>
+                    <button class="btn btn-secondary">Los Angeles</button>
+                    <button class="btn btn-secondary">Paris</button>
+                    <button class="btn btn-secondary">Milan</button>
+                    <button class="btn btn-secondary">Beijing</button>
+                </div> 
+            </div>
+            
+            <!--5 day forecast-->
+            <div class="col-10 forecast"></div>
+        </div>
+    </section>
+
 <script src="./assets/js/script.js"></script>
 </body>
 </html>
