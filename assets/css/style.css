@@ -1,6 +1,10 @@
-.nav{
-    font-size: large;
+.header{
     color: white;
+} 
+
+
+.card {
+    margin: 0 0 10px 0;
 }
 
 

@@ -10,27 +10,34 @@
 </head>
 <body>
     <!--nav/header-->
-    <nav class="navbar bg-primary">
-        <div class="container title">
-          <h1 class="nav text-center">Weather Dashboard</h1>
-        </div>
-    </nav>
+    <header class="nav justify-content-center bg-primary">
+          <h1 class="nav-item">
+              <a class="nav-link active header" aria-current="page" href="#">Weather Dashboard</a>
+          </h1>
+    </header>
 
     <section>
         <!--form element-->
-        <div class="card" style="width: 18rem;">
+            <div class="card text-center" style="width: 16rem;">
             <img src="./assets/images/weather.jpg" class="card-img-top" alt="sun is shining bright over snow-capped mountains">
             <form class="card-body">
               <h5 class="card-title">Search for a city</h5>
               <input class="card-text" type="search" id="query" name="q" placeholder="Search...">
-              <a href="#" class="btn btn-primary">Search</a>
+              <a href="#" class="btn btn-primary col-10">Search</a>
             </form>
+            </div>
+        </div>    
+
+        <!--city buttons-->
+        <div class="d-grid gap-2 col-2">
+            <button class="btn btn-secondary">New York</button>
+            <button class="btn btn-secondary">London</button>
+            <button class="btn btn-secondary">San Francisco</button>
+            <button class="btn btn-secondary">Los Angeles</button>
+            <button class="btn btn-secondary">Paris</button>
+            <button class="btn btn-secondary">Milan</button>
+            <button class="btn btn-secondary">Beijing</button>
         </div>
-        <!-- <form id="form">
-            <p>Search for a city</p> 
-            <input type="search" id="query" name="q" placeholder="Search...">
-            <button class="btn btn-primary mb-3">Search</button>
-          </form> -->
     <section>
 <script src="./assets/js/script.js"></script>
 </body>
