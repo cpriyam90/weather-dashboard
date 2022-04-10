@@ -1,3 +1,8 @@
+.row {
+    background-color: peachpuff;
+    background-size: contain;
+    height: 100vh;
+}
 .header{
     color: white;
 } 
@@ -7,4 +12,41 @@
     margin: 0 0 10px 0;
 }
 
+.search-btn {
+    border-radius: 1rem;
+    margin: 2%;
+}
 
+.Header {
+    display: flex;
+    margin: 2%;
+    justify-content: space-between;
+}
+
+.forecastHeader {
+    margin-top: 5%;
+}
+.card-forecast{
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: #89abe3ff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.forecast{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: peachpuff;
+}
+
+.forcastDate{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.forcast-detail{
+    margin-bottom: 0.6rem;
+}
