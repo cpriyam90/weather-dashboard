@@ -36,17 +36,19 @@
             <!--City weather-->
             <div class="col-md-9 col-sm-12 city-info">
                 <div class="today-weather">
-                    <div class="Header">
-                        <h2 class="city" id="city">City</h2>
-                        <h3 class="date" id="date"></h3>
+                    <div class="weather-card">
+                        <div class="Header">
+                            <h2 class="city" id="city">City</h2>
+                            <h3 class="date" id="date"></h3>
+                        </div>
+                        <img src="" alt="" class = "icon" id="current-icon">
+                        <div class="city-temp current-weather">Temp:</div>
+                        <div class="city-wind current-weather">Wind:</div>
+                        <div class="city-humidity current-weather">Humidity:</div>
+                        <div class="city-uv current-weather">UV Index: <span class="success" class="city-uv"></span> </div>
                     </div>
-                    <img src="" alt="" class = "icon" id="current-icon">
-                    <div class="city-temp">Temp:</div>
-                    <div class="city-wind">Wind:</div>
-                    <div class="city-humidity">Humidity:</div>
-                    <div class="city-uv">UV Index: <span class="success" class="city-uv"></span> </div>
                 </div>
-                <div>
+                <div class="forecast-card">
                     <h4 class = "forecastHeader text-center">Weekly Forecast:</h4>
                     <div class="forecast row">
                         <img src="" alt="" class = "weathericon" id="current-icon">

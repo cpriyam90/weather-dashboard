@@ -61,9 +61,9 @@ function displayCurrentData (data) {
     var cityWind = document.querySelector(".city-wind")
     var cityHumidity = document.querySelector(".city-humidity")
     var cityUv = document.querySelector(".city-uv")
-    cityTemp.textContent = "Temp: " + data.current.temp
-    cityWind.textContent = "Wind Speed: " + data.current.wind_speed
-    cityHumidity.textContent = "Humidity: " + data.current.humidity
+    cityTemp.textContent = "Temp: " + data.current.temp + "F"
+    cityWind.textContent = "Wind Speed: " + data.current.wind_speed + "MPH"
+    cityHumidity.textContent = "Humidity: " + data.current.humidity + "%"
     cityUv.textContent = "UV Index: " + data.current.uvi
     cityUv.style.color = "Green" 
     input.value = ""
