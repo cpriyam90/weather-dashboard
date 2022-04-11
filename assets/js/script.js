@@ -55,6 +55,8 @@ var showCurrentDate = function() {
 function displayCurrentData (data) {
     var cityName = document.querySelector(".city");
     cityName.innerText = input.value;
+    var currentWeatherIconEl = $("#current-icon");
+    currentWeatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png")
     var cityTemp = document.querySelector(".city-temp")
     var cityWind = document.querySelector(".city-wind")
     var cityHumidity = document.querySelector(".city-humidity")
@@ -63,6 +65,7 @@ function displayCurrentData (data) {
     cityWind.textContent = "Wind Speed: " + data.current.wind_speed
     cityHumidity.textContent = "Humidity: " + data.current.humidity
     cityUv.textContent = "UV Index: " + data.current.uvi
+    cityUv.style.color = "Green" 
     input.value = ""
     
 }
@@ -84,33 +87,34 @@ var getDaily = function(lat,lon) {
 }
 
 //function to fetch weekly forecast
-var forecastContainer = document.querySelector('.forecast');
+var forecastContainer = document.querySelector('.forecast')
 var showForecast = function(data) {
-    forecastContainer.innerHTML = " ";
+    forecastContainer.innerHTML = " "
     for (var i = 1; i < data.length; ++i){
-        const eachDay = document.createElement("div");
-        eachDay.classList.add("card-forecast", "col-lg-2", "col-4");
+        const eachDay = document.createElement("div")
+        eachDay.classList.add("card-forecast", "col-lg-2", "col-4")
 
-        const date = document.createElement("h4");
-        date.classList.add("forecastDate");
-        var dateString = moment.unix(data[i].dt).format("MM/DD/YYYY");
-        date.textContent = dateString;
-
+        const date = document.createElement("h4")
+        date.classList.add("forecastDate")
+        var dateString = moment.unix(data[i].dt).format("MM/DD/YYYY")
+        date.textContent = dateString        
+    
         //temp forcast
-        const temp = document.createElement('div');
-        temp.classList.add("forecast-detail", "temp");
+        const temp = document.createElement('div')
+        temp.classList.add("forecast-detail", "temp")
         temp.textContent = "Temp: " + data[i].temp.day + "F";
         //wind forcast
-        const wind = document.createElement('div');
-        wind.classList.add("forecast-detail", 'wind');
+        const wind = document.createElement('div')
+        wind.classList.add("forecast-detail", 'wind')
         wind.textContent = "Wind: " + data[i].wind_speed + " MPH";
         //humidity forcast
-        const humidity = document.createElement('div');
-        humidity.classList.add("forecast-detail", "humidity");
+        const humidity = document.createElement('div')
+        humidity.classList.add("forecast-detail", "humidity")
         humidity.textContent = "Humidity: " + data[i].humidity + "%";
 
         eachDay.appendChild(date);
-        //eachDay.appendChild(img);
+        // eachDay.find(".weathericon").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + ".png");
+        // eachDay.appendChild(img);
         eachDay.appendChild(temp);
         eachDay.appendChild(wind);
         eachDay.appendChild(humidity);
