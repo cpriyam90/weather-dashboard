@@ -42,7 +42,7 @@ W3 schools tutorials for defining functions, Jquery documentation and OpenWeathe
 
 ## Screenshot
 
-![alt="Screenshot of Landing Page"](./assets/images/screenshot.png)
+![alt="Screenshot of Landing Page"](./assets/images/Screenshot.png)
 
 ## Link to deployed page
 
