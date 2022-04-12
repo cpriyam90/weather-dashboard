@@ -1,12 +1,50 @@
 var input = document.getElementById("query")
 var searchBtn = document.getElementById("search-btn")
+var cityList = []
+var cityContainer = document.querySelector(".cityContainer")
 
 
 //add event listener to search button display weather forecast
 searchBtn.addEventListener("click", function(event) {
    event.preventDefault () 
    getLatLon(input.value)
+   //this is what you are pushing into the array to pull user's input
+   cityList.push(input.value)
+   console.log(cityList)
+    //create buttons for searched cities
+    var cityButton = document.createElement("button")
+    cityButton.textContent = input.value
+    cityButton.classList.add("btn-primary", "col-8", "btn", "mb-2")
+    cityContainer.appendChild(cityButton)
+    cityButton.addEventListener("click", function(event){
+       event.preventDefault()
+       getLatLon(cityButton.textContent) 
+    })
+    savedCities ()
 })
+
+
+//create function for saving city buttons to localstorage
+function savedCities () {
+    for(var i =0; i < cityList.length; i++) {
+        localStorage.setItem(i,cityList[i])
+    }
+}
+
+//function to display data from localstorage
+function getCities () {
+    for(var i = 0; i < localStorage.length; i++) {
+       var cityIndex = localStorage.key(i)
+       var cities = localStorage.getItem(cityIndex)
+       var cityButton = document.createElement("button")
+       cityButton.textContent = cities
+       cityButton.classList.add("btn-primary", "col-8", "btn", "mb-2")
+       cityContainer.appendChild(cityButton)
+
+      
+    }
+}
+getCities ()
 
 //api key from weatherapi
 var apiKey = "ce9ddbed2a5483d36efd8e6483c1ffa6"
@@ -65,7 +103,12 @@ function displayCurrentData (data) {
     cityWind.textContent = "Wind Speed: " + data.current.wind_speed + "MPH"
     cityHumidity.textContent = "Humidity: " + data.current.humidity + "%"
     cityUv.textContent = "UV Index: " + data.current.uvi
-    cityUv.style.color = "Green" 
+    // cityUv.style.color = "Green" 
+    if (cityUv < 1) {
+        cityUv.style.color = "Green"
+    } else {
+        cityUv.style.color = "Red"
+    }
     input.value = ""
     
 }
@@ -112,9 +155,16 @@ var showForecast = function(data) {
         humidity.classList.add("forecast-detail", "humidity")
         humidity.textContent = "Humidity: " + data[i].humidity + "%";
 
+
+        //image icon
+        const imgUrl = "https://openweathermap.org/img/wn/" + data[i].weather[0].icon + ".png"
+        var img = document.createElement("img")
+        img.setAttribute("src", imgUrl)
+
+
         eachDay.appendChild(date);
         // eachDay.find(".weathericon").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + ".png");
-        // eachDay.appendChild(img);
+        eachDay.appendChild(img);
         eachDay.appendChild(temp);
         eachDay.appendChild(wind);
         eachDay.appendChild(humidity);
