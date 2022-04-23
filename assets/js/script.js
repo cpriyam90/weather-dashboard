@@ -47,7 +47,7 @@ function getCities () {
 getCities ()
 
 //api key from weatherapi
-var apiKey = "ce9ddbed2a5483d36efd8e6483c1ffa6"
+var apiKey = "aca0281335faae7fed82a24be5cfe012"
 
 //get api data for lat/lon 
 function getLatLon (city) {

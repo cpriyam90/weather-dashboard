@@ -44,7 +44,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
-
+/* dailyForecast */
 .forecast{
     margin-left: 1rem;
     display: flex;
@@ -52,12 +52,12 @@
     justify-content: center;
     background-color: lemonchiffon;
 }
-
+/* weeklyDate */
 .forcastDate{
     text-align: center;
     margin-bottom: 1rem;
 }
-
+/* weekly-forecast */
 .forcast-detail{
     margin-bottom: 0.6rem;
 }
